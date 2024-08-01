@@ -1,6 +1,10 @@
 require("./config/DBC");
 const express = require('express');
+const morgan = require('morgan')
+const cors = require('cors')
 const app = express()
+app.use(cors())
+app.use(morgan('dev'))
 const router = require('./router/userRouter')
 const todoRouter = require('./router/todoRouter')
 app.use(express.json());
